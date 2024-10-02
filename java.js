@@ -62,15 +62,3 @@ function toggleNightMode() {
         themeIcon.classList.add('fa-sun'); // Change back to moon icon for light mode
     }
 }
-
-
-
-// script.js
-// const nightModeButton = document.getElementById('night-mode-btn');
-
-// nightModeButton.addEventListener('click', () => {
-//     document.body.classList.toggle('night-mode');
-// });
-// const themeButton = document.getElementById('theme-button')
-// const darkTheme = 'dark-theme'
-// const iconTheme = 'uil-sun'
