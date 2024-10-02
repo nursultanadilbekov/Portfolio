@@ -39,13 +39,6 @@ async function getUserInfo() {
 }
 
 function toggleNightMode() {
-    document.body.classList.toggle('night-mode');
-    document.querySelectorAll('header, nav, .container, footer, input, button').forEach(el => {
-        el.classList.toggle('night-mode');
-    });
-}
-
-function toggleNightMode() {
     // Toggle night-mode class
     document.body.classList.toggle('dark-theme');
     document.querySelectorAll('header, nav, .container, footer, input, button').forEach(el => {
@@ -60,5 +53,15 @@ function toggleNightMode() {
     } else {
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun'); // Change back to moon icon for light mode
+    }
+}
+
+function handleSubmit(event) {
+    event.preventDefault(); // Prevent form from submitting and refreshing the page
+    const question = document.getElementById('question').value;
+    if (question) {
+        alert(`You asked: ${question}`);
+    } else {
+        alert('Please enter a question.');
     }
 }
