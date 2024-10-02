@@ -1,3 +1,6 @@
+// Fetch user information and render on About page
+const username = 'nursultanadilbekov'; // Your GitHub username
+
 async function getUserInfo() {
     const response = await fetch(`https://api.github.com/users/${username}`);
     const user = await response.json();

@@ -6,20 +6,35 @@
 
 body {
   font-family: "Oswald", sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: var(--primary-color);
+  color: var(--sceondary-color);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
+.avatar {
+  width: 200px; /* Increased width */
+  height: 200px; /* Increased height */
+  border-radius: 50%; /* Makes the image circular */
+  margin-bottom: 20px; /* Increased space below the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.avatar:hover {
+  transform: scale(1.05); /* Slightly enlarges the image on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increases shadow on hover */
+}
+
+
 a {
   text-decoration: none;
-  color: #007bff;
+  color: var(--secondary-color);
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #0056b3;
+  color: rgb(224, 112, 7);
 }
 
 h1, h2, h3 {
@@ -35,15 +50,15 @@ h1, h2, h3 {
 }
 
 header {
-  background-color: #343a40;
-  color: #fff;
+  background-color: rgb(224, 112, 7);
+  color: var(--primary-color);
   padding: 30px 0;
   text-align: center;
 }
 
 nav {
   font-family: "Bebas Neue", sans-serif;
-  background-color: #212529;
+  background-color: var(--secondary-color);
   padding: 10px 0;
   text-align: center;
 }
@@ -58,7 +73,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff;
+  color: var(--primary-color);
   font-size: 18px;
   padding: 10px 20px;
   border-radius: 5px;
@@ -69,14 +84,30 @@ nav ul li a {
   text-align: center;
 }
 
-.section h2 {
-  color: #007bff;
+h2 {
+  color: var(--secondary-color);
   font-size: 36px;
+  text-align: center;
+}
+
+.user-info{
+  font-size: 20px;
+  font-family: "Oregano", cursive;
+}
+
+.glorious-text{
+  font-family: "Oswald", sans-serif;
+}
+
+p{
+  font-family: "Oregano", cursive;
+  font-size: 20px;
 }
 
 .section p {
   font-size: 18px;
   margin-bottom: 30px;
+  font-family: "Oregano", cursive;
 }
 
 .portfolio-items {
@@ -86,7 +117,7 @@ nav ul li a {
 }
 
 .portfolio-item {
-  background-color: #fff;
+  background-color: var(--primary-color);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -103,12 +134,13 @@ nav ul li a {
 }
 
 .portfolio-item p {
+  font-family: "Oswald", sans-serif;
   font-size: 16px;
 }
 
 footer {
-  background-color: #343a40;
-  color: #fff;
+  background-color: var(--sceondary-color);
+  color: var(--primary-color);
   padding: 20px 0;
   text-align: center;
 }
@@ -173,7 +205,6 @@ footer {
 }
 
 .image::before {
-  content: '';
   position: absolute;
   top: -50%;
   left: -50%;
@@ -189,12 +220,11 @@ footer {
 }
 
 .image::after {
-  content: 'View Image';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) skew(20deg);
-  color: #fff;
+  color: var(--primary-color);
   font-size: 16px;
   font-weight: bold;
   opacity: 0;
@@ -239,8 +269,8 @@ footer {
 }
 
 .portfolio-item button {
-  background-color: #4CAF50;
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -249,13 +279,13 @@ footer {
 }
 
 .portfolio-item button:hover {
-  background-color: #45a049;
+  background-color: rgb(224, 112, 7);
 }
-
+/* 
 .portfolio-item button a {
   text-decoration: none;
-  color: white;
-}
+  color: var(--primary-color);
+} */
 
 section {
   margin-top: 20px;
@@ -265,22 +295,22 @@ section {
 input[type="text"] {
   padding: 10px;
   width: 200px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--primary-color);
   border-radius: 5px;
   font-size: 16px;
 }
 
-button {
+button1 {
   padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
 }
-button:hover {
-  background-color: #45a049;
+button1:hover {
+  background-color: rgb(224, 112, 7);
 }
 #skills {
   text-align: center;
@@ -291,7 +321,7 @@ button:hover {
 }
 
 .skill h3 {
-  color: #333;
+  color: var(--sceondary-color);
   font-size: 24px;
   margin-bottom: 10px;
 }
@@ -302,6 +332,7 @@ button:hover {
 }
 
 .skill ul li {
+  font-family: "Oregano", cursive;
   font-size: 18px;
   margin-bottom: 5px;
 }
@@ -345,11 +376,61 @@ button:hover {
 
 .social-links li a {
   text-decoration: none;
-  color: #333;
+  color: var(--sceondary-color);
   font-size: 16px;
   transition: color 0.3s;
 }
 
 .social-links li a:hover {
-  color: #007bff;
+  color: rgb(224, 112, 7);
+}
+
+/* js */
+#user-data{
+  text-align: center;
+}
+
+/* styles.css */
+
+.portfolio-item {
+  padding: 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  margin-top: 20px;
+}
+
+.portfolio-item h3 {
+  font-size: 22px;
+  color: var(--secondary-color);
+}
+
+.portfolio-item p {
+  font-size: 16px;
+  color: var(--secondary-color);
+}
+
+.portfolio-item button {
+  padding: 10px 20px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.portfolio-item button a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+#icon{
+  width: 30px;
+  cursor: pointer;
+}
+
+/* dark mode */
+:root{
+  --primary-color: #edf2fc;
+  --secondary-color: #212121;
 }
