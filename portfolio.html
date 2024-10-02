@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Include Font Awesome -->
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +27,9 @@
       </header>
       <nav>
         <ul>
+          <button id="theme-toggle" onclick="toggleNightMode()">
+            <i id="theme-icon" class="fas fa-sun"></i> <!-- Default moon icon -->
+          </button>        
             <li><a href="./index.html">Gallery</a></li>
             <li><a href="./about.html">About</a></li>
             <li><a href="./portfolio.html">Portfolio</a></li>
@@ -36,30 +40,6 @@
     <section id="portfolio" class="section">
         <h2 class="glorious-text">Portfolio</h2>
         <div class="portfolio-items">
-          <!-- <div class="portfolio-item">
-            <h3>Project 1</h3>
-            <img src="img/photo4.png" alt="Project 1" style="width:100%">
-            <p>The Snake Game is a classic arcade game where the player controls a snake that moves around the game board, eating food pellets to grow longer. The goal is to avoid colliding with the walls of the board or the snake's own tail. As the snake grows longer, the game becomes more challenging.</p>
-            <button><a href="https://github.com/nursultanadilbekov/final-project">Go to GITHUB</a></button>
-          </div>
-          <div class="portfolio-item">
-            <h3>Project 2</h3>
-            <img src="img/photo6.jpg" alt="Project 2" style="width:100%">
-            <p>Tic Tac Toe is a two-player strategy game played on a 3x3 grid. Players take turns marking spaces with either an "X" or an "O" until one player achieves a row, column, or diagonal of their symbol, or until the grid is filled with no winner (resulting in a draw).</p>
-            <button><a href="https://github.com/nursultanadilbekov/Array-Helping-the-Martians-Project">Go to GITHUB</a></button>
-          </div>
-          <div class="portfolio-item">
-            <h3>Project 3</h3>
-            <img src="img/photo7.png" alt="Project 3" style="width:100%">
-            <p>A Calculator is a basic utility application used for performing mathematical calculations. It typically provides a user interface with buttons for numbers, operators (such as addition, subtraction, multiplication, and division), and functions (such as square root and exponentiation), allowing users to input equations and receive the calculated result.</p>
-            <button><a href="https://github.com/nursultanadilbekov/final-project">Go to GITHUB</a></button>
-          </div>
-          <div class="portfolio-item">
-            <h3>Project 4</h3>
-            <img src="img/photo5.jpg" alt="Project 4" style="width:100%">
-            <p> A Library Management System is a software application designed to help libraries efficiently manage their collections of books, journals, and other materials. It typically includes features such as cataloging, circulation, patron management, and reporting.</p>
-            <button><a href="https://github.com/nursultanadilbekov/final-project">Go to GITHUB</a></button>
-          </div> -->
         </div>
       </section>
       <footer>

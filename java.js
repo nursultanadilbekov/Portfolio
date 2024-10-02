@@ -45,6 +45,24 @@ function toggleNightMode() {
     });
 }
 
+function toggleNightMode() {
+    // Toggle night-mode class
+    document.body.classList.toggle('dark-theme');
+    document.querySelectorAll('header, nav, .container, footer, input, button').forEach(el => {
+        el.classList.toggle('dark-theme');
+    });
+
+    // Switch between sun and moon icons
+    const themeIcon = document.getElementById('theme-icon');
+    if (document.body.classList.contains('dark-theme')) {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon'); // Change to sun icon for night mode
+    } else {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun'); // Change back to moon icon for light mode
+    }
+}
+
 
 
 // script.js
