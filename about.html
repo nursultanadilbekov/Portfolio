@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Text Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Include Font Awesome -->
     <meta charset="UTF-8">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio of Nursultan Adilbekov, a Backend Developer and student at Ala Too University.">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
     <title>Nursultan Adilbekov - Backend Developer</title>
 </head>
 <body>
+    <!-- JS -->
     <script src="java.js"></script>
+
     <header>
         <img src="img/me1.jpeg" alt="Profile Picture of Nursultan Adilbekov" class="profile-img">
         <h1 class="glorious-text">Adilbekov Nursultan</h1>
         <p class="glorious-text">Backend Developer</p>
     </header>
+    <!-- Menu bar -->
     <nav>
         <ul>
+            <!-- Nightmode button -->
             <button id="theme-toggle" onclick="toggleNightMode()">
-                <i id="theme-icon" class="fas fa-sun"></i> <!-- Default moon icon -->
+                <i id="theme-icon" class="fas fa-sun"></i>
               </button>            
             <li><a href="./index.html">Gallery</a></li>
             <li><a href="./about.html">About</a></li>
@@ -30,11 +38,13 @@
             <li><a href="./contacts.html">Contact</a></li>
         </ul>
     </nav>
-    
+
     <div class="container">
+        <!--Github user information-->
         <div class="user-info" id="user-info">
-            <div id="user-data"></div> <!-- This will be populated with user info -->
+            <div id="user-data"></div>
         </div>
+
         <div class="repo-info" id="about">
             <h2 class="glorious-text">About Me</h2>
             <p>I am a first-year student at Ala Too University, studying backend development. Despite being in my first year, I have a wealth of experience in the field, having worked on various projects in the past. My passion for coding drives me to continuously learn and improve my skills.</p>
@@ -48,6 +58,7 @@
     </div>
 
     <section>
+        <!-- Taskbar for questions -->
         <form action="" onsubmit="handleSubmit(event)">
             <label for="question">Your Question:</label>
             <input type="text" id="question" placeholder="Type your question here..." required>

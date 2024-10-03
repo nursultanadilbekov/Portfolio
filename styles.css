@@ -13,17 +13,17 @@ body {
 }
 
 .avatar {
-  width: 200px; /* Increased width */
-  height: 200px; /* Increased height */
-  border-radius: 50%; /* Makes the image circular */
-  margin-bottom: 20px; /* Increased space below the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .avatar:hover {
-  transform: scale(1.05); /* Slightly enlarges the image on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increases shadow on hover */
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -386,12 +386,9 @@ button:hover {
   color: var(--lightorange-color);
 }
 
-/* js */
 #user-data{
   text-align: center;
 }
-
-/* styles.css */
 
 .portfolio-item {
   padding: 20px;
@@ -430,7 +427,16 @@ button:hover {
   cursor: pointer;
 }
 
-/* dark mode */
+.social-links{
+  color: var(--link-color);
+}
+
+.skills-list{
+  color: var(--secondary-color);
+}
+
+/* Nightmode */
+
 :root{
   --primary-color: #edf2fc;
   --secondary-color: #212121;
@@ -453,7 +459,7 @@ button:hover {
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #fff; /* or adjust based on your theme */
+  color: var(--primary-color);
   position: fixed;
   top: 20px;
   right: 20px;
@@ -461,16 +467,4 @@ button:hover {
 
 #theme-toggle i {
   transition: color 0.3s ease;
-}
-
-#theme-icon{
-  --primary-color: #212121;
-}
-
-.social-links{
-  color: var(--link-color);
-}
-
-.skills-list{
-  color: var(--secondary-color);
 }

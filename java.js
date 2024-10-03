@@ -1,8 +1,11 @@
+//Github username
 const username = 'nursultanadilbekov';
 
 getUserInfo();
 
 getRepos();
+
+//Function to get respository from github account by using api, by method fetch
 
 async function getRepos() {
     const response = await fetch(`https://api.github.com/users/${username}/repos`);
@@ -24,10 +27,12 @@ async function getRepos() {
     });
 }
 
+//Function to get user information from github account by using api, by method fetch
+
 async function getUserInfo() {
     const response = await fetch(`https://api.github.com/users/${username}`);
     const user = await response.json();
-    const userInfoSection = document.querySelector('#user-data'); // Select the user data section
+    const userInfoSection = document.querySelector('#user-data');
 
     userInfoSection.innerHTML = `
         <img src="${user.avatar_url}" alt="Avatar" class="avatar">
@@ -38,26 +43,28 @@ async function getUserInfo() {
     `;
 }
 
+//Nightmode
+
 function toggleNightMode() {
-    // Toggle night-mode class
     document.body.classList.toggle('dark-theme');
     document.querySelectorAll('header, nav, .container, footer, input, button').forEach(el => {
         el.classList.toggle('dark-theme');
     });
 
-    // Switch between sun and moon icons
     const themeIcon = document.getElementById('theme-icon');
     if (document.body.classList.contains('dark-theme')) {
         themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon'); // Change to sun icon for night mode
+        themeIcon.classList.add('fa-moon');
     } else {
         themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun'); // Change back to moon icon for light mode
+        themeIcon.classList.add('fa-sun');
     }
 }
 
+//Submit button's funtion
+
 function handleSubmit(event) {
-    event.preventDefault(); // Prevent form from submitting and refreshing the page
+    event.preventDefault();
     const question = document.getElementById('question').value;
     if (question) {
         alert(`You asked: ${question}`);
