@@ -15,7 +15,7 @@ async function getRepos() {
     repos.forEach((repo, index) => {
         const repoItem = document.createElement('div');
         repoItem.classList.add('portfolio-item');
-        const repoImage = `img\${repo.name}.png`;
+        const repoImage = `img\${repo.name}.jpeg`;
 
         repoItem.innerHTML = `
             <img src="${repoImage}" alt="${repo.name} image" style="width:150px; height:150px;">
