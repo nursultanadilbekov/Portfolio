@@ -12,7 +12,8 @@ async function getRepos() {
     const repos = await response.json();
     const portfolioContainer = document.querySelector('.portfolio-items');
 
-    repos.forEach((repo, index) => {
+    for (const repo of repos) {
+        // Create main repository item
         const repoItem = document.createElement('div');
         repoItem.classList.add('portfolio-item');
         const repoImage = `img/${repo.name}.jpeg`;
@@ -24,8 +25,33 @@ async function getRepos() {
             <button><a href="${repo.html_url}" target="_blank">Go to GITHUB</a></button>
         `;
         portfolioContainer.appendChild(repoItem);
-    });
+
+        // Fetch branches for this repo
+        const branchesResponse = await fetch(repo.branches_url.replace('{/branch}', ''));
+        const branches = await branchesResponse.json();
+
+        // Check if the repository has more than one branch
+        if (branches.length > 1) {
+            branches.forEach(branch => {
+                if (branch.name !== repo.default_branch) {
+                    // Create a beta version for each non-default branch
+                    const branchItem = document.createElement('div');
+                    branchItem.classList.add('portfolio-item');
+                    const branchImage = `img/${repo.name}_beta.jpeg`;
+
+                    branchItem.innerHTML = `
+                        <img src="${branchImage}" alt="${repo.name} - ${branch.name} beta image" style="width:150px; height:150px;">
+                        <h3>${repo.name} (Beta: ${branch.name})</h3>
+                        <p>Branch: ${branch.name}</p>
+                        <button><a href="${repo.html_url}/tree/${branch.name}" target="_blank">Go to Beta</a></button>
+                    `;
+                    portfolioContainer.appendChild(branchItem);
+                }
+            });
+        }
+    }
 }
+
 
 //Function to get user information from github account by using api, by method fetch
 
