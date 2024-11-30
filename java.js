@@ -12,7 +12,8 @@ async function getRepos() {
     const repos = await response.json();
     const portfolioContainer = document.querySelector('.portfolio-items');
 
-    repos.forEach((repo, index) => {
+    for (const repo of repos) {
+        // Create main repository item
         const repoItem = document.createElement('div');
         repoItem.classList.add('portfolio-item');
         const repoImage = `img/${repo.name}.jpeg`;
@@ -22,9 +23,31 @@ async function getRepos() {
             <h3>${repo.name}</h3>
             <p>${repo.description || 'No description available'}</p>
             <button><a href="${repo.html_url}" target="_blank">Go to GITHUB</a></button>
+            <div class="branches-container">
+                <h4>Branches:</h4>
+                <ul class="branches-list"></ul>
+            </div>
         `;
         portfolioContainer.appendChild(repoItem);
-    });
+
+        // Fetch branches for this repo
+        const branchesResponse = await fetch(repo.branches_url.replace('{/branch}', ''));
+        const branches = await branchesResponse.json();
+        const branchesList = repoItem.querySelector('.branches-list');
+
+        // Check if the repository has more than one branch and display branches
+        if (branches.length > 1) {
+            branches.forEach(branch => {
+                const branchItem = document.createElement('li');
+                branchItem.innerHTML = `
+                    ${branch.name === repo.default_branch ? branch.name + ' (Default)' : `<a href="${repo.html_url}/tree/${branch.name}" target="_blank">${branch.name} (Beta)</a>`}
+                `;
+                branchesList.appendChild(branchItem);
+            });
+        } else {
+            branchesList.innerHTML = `<li>${branches[0].name} (Default)</li>`;
+        }
+    }
 }
 
 //Function to get user information from github account by using api, by method fetch
